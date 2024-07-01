@@ -4,8 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        alert("환영합니다");
+        alert("지금 실행하신 페이지는 창덕궁 페이지 입니다.");
+
+        window.onload = function(){
+            let time = document.getElementById('time');
+            time.style = 'text-align : bottom'
+            setInterval(function(){
+                let now = new Date();
+                time.innerHTML = now.toString();
+            }, 1000);
+        };
+        function deleteUser() {
+            location.href="https://royal.khs.go.kr/ROYAL/contents/R701000000.do?schGroupCode=cdg&schFroupCodeNm=%EC%B0%BD%EB%8D%95%EA%B6%81";
+        };
+    </script>
     <style>
-       
+        #button{
+            position: absolute;
+            top: 30px;
+            right: 10px;
+        }
         body{
             background-image: url("img/창덕궁_전경_2012.jpg");
             background-size: 100%;
@@ -27,10 +47,17 @@
             right: 10px;
             color: rgb(166, 206, 232);
         }
+        #time {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
     <h1><b>창 덕 궁</b></h1>
+    <input id="button" type="button" onclick="deleteUser()" value="창덕궁 공식 홈페이지">
     <hr>
     <div id="button2">
         <input onclick="location.href='inAndOut.html'" type="button" value="내전과 외전">
@@ -42,5 +69,6 @@
     <hr>
     
     <p id="bottom1">창덕궁 전경(2012)</p>
+    <h5 id="time"></h5>
 </body>
 </html>
